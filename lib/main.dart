@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       routerDelegate: _routes.delegate(
-        initialRoutes: [const LoginRoute()],
+        initialRoutes: [LoginRoute()],
       ),
       routeInformationProvider: _routes.routeInfoProvider(),
       routeInformationParser: _routes.defaultRouteParser(),
