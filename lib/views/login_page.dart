@@ -3,7 +3,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../models/authentication_state.dart';
 import '../services/rest_client_services.dart';
 import '../services/route_services.gr.dart';
 import '../view-models/user_view_model.dart';
@@ -26,10 +25,7 @@ class LoginPage extends StatelessWidget {
           Align(
             child: TextButton(
               onPressed: () async {
-                final userState = userVm.auth.value;
-                if (userState is UnAuthenticated) {
-                  userVm.getUser(UserData.loginWithUser());
-                }
+                userVm.getUser(UserData.loginWithUser());
                 if (context.mounted) context.router.push(ProfileRoute());
               },
               child: const Text('Login'),
